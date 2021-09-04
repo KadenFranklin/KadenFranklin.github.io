@@ -1,0 +1,33 @@
+#heading {
+  color: white;
+  background-color: #00008B;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+#body {
+  color: #000000;
+  background-color: #ee90ee ;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  margin: 20px;
+}
+
+#images {
+  text-align: center;
+  color: black;
+  background-color: gray;
+  justify-content: center;
+  padding: 50px;
+  margin: 25px;
+}
+
+#locations {
+  text-align: center;
+  color: #000000;
+  background-color: #90ee90;
+  font-family: 'Open Sans', sans-serif;
+  margin: 40px
+}
+/* Kaden Franklin*/
