@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+}
+
+#jmb{
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    background-image: url("./images/stars3.jpg");
+    background-size: auto;
+    height: 200px;
+  }
+
+  #text-boxes{
+    text-align: center;
+  background-color: rgb(132, 136, 132);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+
+#heading {
+  color: white;
+  background-color: #00008B;
+  font-family: 'Kaisei Tokumin', serif;
+  text-align: center;
+}
+
+#body {
+  display: flex;
+  color: #000000;
+  background-color: #ee90ee ;
+  text-align: left;
+  font-family:
+   'Kaisei Tokumin', serif;
+  padding: 10px;
+}
+
+.float-container{
+  display: flex;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+#weather_element{
+  flex: 1;
+  padding: 50px;
+  border: 3px solid white;
+  color: white;
+  margin-right: 50px;
+}
+
+#satellite_element {
+  flex: 1;
+  padding: 50px;
+  border: 3px solid white;
+  color: white;
+}
+
+
+/* Kaden Franklin*/

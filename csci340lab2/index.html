@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+      <title> See The Stars! </title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="./style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com/">
+      <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+      <!-- CSS only -->
+      <link href="./index_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+      <div class="container">
+        <div id="jmb" class="jumbotron">
+            <h1> Can you see the stars? </h1>
+      <h3> If so, do you want to see some Satellites? </h3>
+        </div>
+      </div>
+
+      <div id="text-boxes" class="container">
+        <form action="/action_page.php">
+          <label for="city">City:</label><br>
+          <input type="text" id="city" name="city" value=""><br>
+          <label for="state">State:</label><br>
+          <input type="text" id="state" name="state" value=""><br><br>
+          <input type="submit" value="Do The Thing!">
+        </form>
+      </div>
+
+      <div class="float-container">
+        <div id="weather_element" class="float-child-container">
+        <h3>Weather:</h3>
+          <div id="w-day-0" class="container">
+            Today:
+            <p> </p>
+
+          </div>
+          <div id="w-day-1" class="container">
+            Day 1:
+            <p> </p>
+
+          </div>
+          <div id="w-day-2" class="container">
+            Day 2:
+            <p> </p>
+
+          </div>
+          <div id="w-day-3" class="container">
+            Day 3:
+            <p> </p>
+
+          </div>
+        </div>
+
+        <div id="satellite_element" class="float-child-container">
+          <h3>Satellites:</h3>
+          <p> </p>
+
+        </div>
+      </div>
+
+      <div id="body" class="container">
+        <p>
+          Ever since I was young, I have always been fascinated by the stars.
+          Not just the stars for that matter, but all celestial bodies.
+          The Moon, the planets, the constellations, the ISS, and more recently StarLink Satellites.
+          I have vague memories of my mother waking me up in the early hours of the morning to watch comets pass.
+          Even travelling hundreds of miles to watch the "Great American Lunar Eclipse" a couple years ago.
+          I made this site as a small tribute to my love for the heavenly bodies and humans everlasting endevour to touch reach the stars.
+
+        </p>
+      </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <!-- <script> src ="https://maxcdn.bootsrapcdn.com/bootstrap/3.4.0/js/bootsrap" -->
+        <script> $("p").text("")
+        </script>
+    </body>
+</html>
+
+<!-- Kaden Franklin -->
