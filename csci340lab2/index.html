@@ -3,7 +3,6 @@
 
     <head>
       <title> See The Stars! </title>
-
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <link rel="stylesheet" href="./style.css">
       <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -13,72 +12,159 @@
     </head>
 
     <body>
-
       <div class="container">
         <div id="jmb" class="jumbotron">
             <h1> Can you see the stars? </h1>
-      <h3> If so, do you want to see some Satellites? </h3>
+      <h3> Or maybe some satellites </h3>
+      <h4>Find a list of all Satellites/Cellestial bodies and their norad ids: <a href="https://in-the-sky.org/search.php?s=&searchtype=Spacecraft&satorder=0" style = "color:white">Here</a> </h4>
         </div>
       </div>
 
       <div id="text-boxes" class="container">
-        <form action="/action_page.php">
-          <label for="city">City:</label><br>
-          <input type="text" id="city" name="city" value=""><br>
-          <label for="state">State:</label><br>
-          <input type="text" id="state" name="state" value=""><br><br>
-          <input type="submit" value="Do The Thing!">
-        </form>
+        <label for="city">City:</label><br>
+        <input type="text" id="City" name="city" value=""><br>
+        <label for="state">State:</label><br>
+        <input type="text" id="State" name="state" value=""><br>
+        <label for="Norad_ID">Norad_ID:</label><br>
+        <input type="text" id="Norad_ID" name="Norad_ID" value=""><br>
+        <input type="submit" id="Submit_button" value="Do The Thing!">
       </div>
 
       <div class="float-container">
         <div id="weather_element" class="float-child-container">
-        <h3>Weather:</h3>
+        <h1>Weather:</h1>
+          <h2>Today:</h2>
           <div id="w-day-0" class="container">
-            Today:
-            <p> </p>
-
+            <h4>Temperature:</h4>
+            <p id="w-day-0-temp"> </p>
+            <h4>Wind:</h4>
+            <p id ="w-day-0-wind" >
+            <h4>Description:</h4>
+            <p id ="w-day-0-desc"></p>
           </div>
+
+          <h2>Day 1:</h2>
           <div id="w-day-1" class="container">
-            Day 1:
-            <p> </p>
-
+            <h4>Temperature:</h4>
+            <p id="w-day-1-temp"> </p>
+            <h4>Wind:<h4>
+            <p id ="w-day-1-wind"> </p>
           </div>
+
+          <h2>Day 2:</h2>
           <div id="w-day-2" class="container">
-            Day 2:
-            <p> </p>
-
+            <h4>Temperature:</h4>
+            <p id="w-day-2-temp"> </p>
+            <h4>Wind:</h4>
+            <p id ="w-day-2-wind"> </p>
           </div>
-          <div id="w-day-3" class="container">
-            Day 3:
-            <p> </p>
 
+          <h2>Day 3:</h2>
+          <div id="w-day-3" class="container">
+            <h4>Temperature:</h4>
+            <p id="w-day-3-temp"> </p>
+            <h4>Wind:</h4>
+            <p id ="w-day-3-wind"> </p>
           </div>
         </div>
 
         <div id="satellite_element" class="float-child-container">
-          <h3>Satellites:</h3>
-          <p> </p>
+          <h1>Satellite:</h1>
 
+          <h2>Rise:</h2>
+          <div id="s-rise" class="container">
+            <h4>Alt:</h4>
+            <p id="s-rise-alt"> </p>
+            <h4>Az:</h4>
+            <p id="s-rise-az"> </p>
+            <h4>Time:</h4>
+            <p id ="s-rise-time"> </p>
+          </div>
+
+          <h2>Culmination:</h2>
+          <div id="s-culm" class="container">
+            <h4>Alt:</h4>
+            <p id="s-culm-alt"> </p>
+            <h4>Az:</h4>
+            <p id="s-culm-az"> </p>
+            <h4>Time:</h4>
+            <p id ="s-culm-time"> </p>
+          </div>
+
+          <h2>Set:</h2>
+          <div id="s-set" class="container">
+            <h4>Alt:</h4>
+            <p id="s-set-alt"> </p>
+            <h4>Az:</h4>
+            <p id="s-set-az"> </p>
+            <h4>Time:</h4>
+            <p id ="s-set-time"> </p>
+          </div>
+
+          <p>All date/times are in UTC (Coordinated Universal Time). </p>
         </div>
       </div>
 
-      <div id="body" class="container">
-        <p>
-          Ever since I was young, I have always been fascinated by the stars.
-          Not just the stars for that matter, but all celestial bodies.
-          The Moon, the planets, the constellations, the ISS, and more recently StarLink Satellites.
-          I have vague memories of my mother waking me up in the early hours of the morning to watch comets pass.
-          Even travelling hundreds of miles to watch the "Great American Lunar Eclipse" a couple years ago.
-          I made this site as a small tribute to my love for the heavenly bodies and humans everlasting endevour to touch reach the stars.
-
-        </p>
-      </div>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <!-- <script> src ="https://maxcdn.bootsrapcdn.com/bootstrap/3.4.0/js/bootsrap" -->
-        <script> $("p").text("")
+
+        <script>
+        //other important things to include in the website:
+        //locations are approximate, sometimes based on your county, other times based on your City
+        //you must pick a specific satellite to track from norad and enter its id Exactly
+
+        // seperate each seperate request into its own function,
+        // where it only takes the link as the parameter
+        // parse JSON files from there on
+
+        $("#Submit_button").on("click", function() {
+            console.log("Oh boy here we go!");
+            var city = $("#City").val();
+            var state  = $("#State").val();
+            var norad = $("#Norad_ID").val();
+
+            var weat_url_1 = "https://goweather.herokuapp.com/weather/%7B" ;
+            var weat_url_2 = "%7D" ;
+            var combo_2 = weat_url_1 + city + "-" + state + weat_url_2;
+            //Weather(combo_2)
+
+            $.ajax(combo_2, {
+              success: function (data, status, xhr) {
+              console.log(data);
+              }
+            });
+
+            var coor_url_1 = "https://api.opencagedata.com/geocode/v1/json?q=";
+            var coor_url_2 = "&key=274df8982be3470b9b369075e615ba0f&abbrv=1&pretty=1&no_annotations=1";
+            var combo_1 = coor_url_1 + city + "-" + state + coor_url_2;
+
+            $.ajax(combo_1, {
+              success: function (data, status, xhr) {
+              console.log(data);
+              }
+            });
+            // have to parse json here so that we may use coordinates from this API
+            var lat = "?lat=" + "35.2521996" ;
+            var lon = "&lon=" + "-92.6888936" ;
+            var satt_url_1 = "https://satellites.fly.dev/passes/";
+            var satt_url_2 = "&limit=1&days=3";
+            var combo_3 = satt_url_1 + norad + lat + lon + satt_url_2;
+            //Satellite(combo_3)
+
+            $.ajax({
+              url: combo_3,
+              type: "GET",
+              dataType: 'json',
+              success: function(res) {
+              console.log(res);
+              alert(res);
+              }
+            });
+          });
+
         </script>
+<!-- can put everything above this in the script.js when done and it will run because of this line -->
+        <script type="text/javascript" src="script.js"> </script>
+
     </body>
 </html>
 

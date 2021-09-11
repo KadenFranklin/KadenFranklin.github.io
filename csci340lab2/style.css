@@ -2,6 +2,10 @@ body {
   background-color: black;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
 #jmb{
     color: white;
     text-align: center;
