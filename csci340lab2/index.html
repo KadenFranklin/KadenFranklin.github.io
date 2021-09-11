@@ -19,20 +19,19 @@
       <h4>Find a list of all Satellites/Cellestial bodies and their norad ids: <a href="https://in-the-sky.org/search.php?s=&searchtype=Spacecraft&satorder=0" style = "color:white">Here</a> </h4>
         </div>
       </div>
-
       <div id="text-boxes" class="container">
-        <label for="city">City:</label><br>
+        <label id="city_label">City:</label><br>
         <input type="text" id="City" name="city" value=""><br>
-        <label for="state">State:</label><br>
+        <label id="state_label">State:</label><br>
         <input type="text" id="State" name="state" value=""><br>
-        <label for="Norad_ID">Norad_ID:</label><br>
+        <label id="Norad_ID_label">Norad_ID:</label><br>
         <input type="text" id="Norad_ID" name="Norad_ID" value=""><br>
         <input type="submit" id="Submit_button" value="Do The Thing!">
       </div>
 
       <div class="float-container">
         <div id="weather_element" class="float-child-container">
-        <h1>Weather:</h1>
+          <h1>Weather:</h1>
           <h2>Today:</h2>
           <div id="w-day-0" class="container">
             <h4>Temperature:</h4>
@@ -47,7 +46,7 @@
           <div id="w-day-1" class="container">
             <h4>Temperature:</h4>
             <p id="w-day-1-temp"> </p>
-            <h4>Wind:<h4>
+            <h4>Wind:</h4>
             <p id ="w-day-1-wind"> </p>
           </div>
 
@@ -70,6 +69,9 @@
 
         <div id="satellite_element" class="float-child-container">
           <h1>Satellite:</h1>
+
+          <h2>Visible: <h2>
+          <p id="visible"> </p>
 
           <h2>Rise:</h2>
           <div id="s-rise" class="container">
@@ -108,13 +110,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
         <script>
-        //other important things to include in the website:
-        //locations are approximate, sometimes based on your county, other times based on your City
-        //you must pick a specific satellite to track from norad and enter its id Exactly
 
-        // seperate each seperate request into its own function,
-        // where it only takes the link as the parameter
-        // parse JSON files from there on
+        //just need to take data from each JSON file and put it in the variables;
 
         $("#Submit_button").on("click", function() {
             console.log("Oh boy here we go!");
@@ -162,8 +159,33 @@
           });
 
         </script>
+
+        <script>
+        //for weather:
+        $("#w-day-0-temp").text("");
+        $("#w-day-0-wind").text("");
+        $("#w-day-0-desc").text("");
+        $("#w-day-1-temp").text("");
+        $("#w-day-1-wind").text("");
+        $("#w-day-2-temp").text("");
+        $("#w-day-2-wind").text("");
+        $("#w-day-3-temp").text("");
+        $("#w-day-3-wind").text("");
+        //for satellites:
+        $("#visible").text("")
+        $("#s-rise-alt").text("");
+        $("#s-rise-az").text("");
+        $("#s-rise-time").text("");
+        $("#s-culm-alt").text("");
+        $("#s-culm-az").text("");
+        $("#s-culm-time").text("");
+        $("s-set-alt").text("");
+        $("s-set-az").text("");
+        $("s-set-time").text("");
+        </script>
+
 <!-- can put everything above this in the script.js when done and it will run because of this line -->
-        <script type="text/javascript" src="script.js"> </script>
+        <script src="script.js"> </script>
 
     </body>
 </html>
