@@ -80,20 +80,37 @@ $("#Submit_button").on("click", function() {
           type: "GET",
           dataType: 'json',
           success: function(data) {
-          console.log(data);
-          //fill satellite data
-          $("#visible").text("")
-          $("#s-rise-alt").text("");
-          $("#s-rise-az").text("");
-          $("#s-rise-time").text("");
-          $("#s-culm-alt").text("");
-          $("#s-culm-az").text("");
-          $("#s-culm-time").text("");
-          $("s-set-alt").text("");
-          $("s-set-az").text("");
-          $("s-set-time").text("");
-        }
-      });
+            console.log(data);
+            $.each(data, function(list, values){
+              $.each(values, function(key, value){
+                if (key == "rise") {
+                  $.each(value, function(k, v){
+                    if (k == "alt") { $("#s-rise-alt").text(v); }
+                    if (k == "az") { $("#s-rise-az").text(v); }
+                    if (k == "utc_datetime") { $("#s-rise-time").text(v); }
+                  });
+                }
+                if (key == "culmination") {
+                  $.each(value, function(k, v){
+                    if (k == "alt") { $("#s-culm-alt").text(v); }
+                    if (k == "az") { $("#s-culm-az").text(v); }
+                    if (k == "utc_datetime") { $("#s-culm-time").text(v); }
+                  });
+                }
+                if (key == "set") {
+                  $.each(value, function(k, v){
+                    if (k == "alt") { $("#s-set-alt").text(v); }
+                    if (k == "az") { $("#s-set-az").text(v); }
+                    if (k == "utc_datetime") { $("#s-set-time").text(v); }
+                  });
+                }
+                if (key == "visible") {
+                  $("#visible").text(value);
+                }
+              });
+            });
+          }
+        });
       }
     });
   });
