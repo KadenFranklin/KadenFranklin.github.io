@@ -10,7 +10,7 @@ $("#Submit_button").on("click", function() {
 
     $.ajax(combo_2, {
       success: function (data) {
-        console.log(data)
+        console.log(data);
         $.each(data, function(key, value){
           if (key == 'temperature') { $("#w-day-0-temp").text(value); }
           if (key == "wind") { $("#w-day-0-wind").text(value); }
@@ -46,11 +46,28 @@ $("#Submit_button").on("click", function() {
     var combo_1 = coor_url_1 + city + "-" + state + coor_url_2;
 
     $.ajax(combo_1, {
-      success: function (data) {
+      success: function (data){
         console.log(data);
-        //parse json to get coordinates(change these later)
-        var lat_coord = "35.0887";
-        var lon_coord = "92.4421";
+        $.each(data, function(key, value){
+          if (key == "results") {
+            $.each(value, function(index, val){
+              if (index == "3"){
+                $.each(val, function(i, v){
+                  if (i == "geometry"){
+                    $.each(v, function(cat, dog) {
+                      if (cat == "lat") {
+                        lat_coord = dog;
+                      }
+                      if (cat == "lng"){
+                        lon_coord = dog;
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
 
         var lat = "?lat=" + lat_coord ;
         var lon = "&lon=" + lon_coord ;
