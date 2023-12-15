@@ -1,7 +1,7 @@
 # KadenFranklin.github.io
 
-Some VERY EARLY websites I made...
+This is now a portfolio page.
 
-The [first one](https://kadenfranklin.github.io/csci340lab1/) is about Fish Riddle Root. (randomly generated words determined the assignment)
+<!-- The [first one](https://kadenfranklin.github./arch/csci340lab1/) is about Fish Riddle Root. (randomly generated words determined the assignment)
 
-The [second](https://kadenfranklin.github.io/csci340lab2/) was made about a week later. It was the first website I made that used an API.
+The [second](https://kadenfranklin.github.io/arch/csci340lab2/) website used an API to determine whether or not a satellite would be visible from your location. -->
