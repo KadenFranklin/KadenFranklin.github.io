@@ -32,24 +32,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  padding: 3.5%;
   color: #fff;
   scroll-snap-align:start;
-}
-
-.slides h2 {
-  font-size: 250%;
-  font-weight: 1000%;
-  max-width: 650;
-}
-
-.slides p {
-  align-self:end;
-  padding-top: 10%;
-  padding-right: 10%;
-  font-size: 75%;
-  font-weight: 250;
 }
 
 .slide1 {
@@ -68,6 +53,29 @@ footer {
   background: linear-gradient(454deg, #14171A, #1DA1F2);
 }
 
+.slides h2 {
+  font-size: 250%;
+  font-weight: 1000%;
+}
+
+.slides p {
+  align-self:end;
+  padding: 2.5%;
+  font-size: 60%;
+  font-weight: 250;
+}
+
+.links {
+  color: yellow;
+}
+
+.webframe {
+  position: relative;
+  padding: .8%;
+  top: 0;
+  left: 0;
+}
+
 .frame-link {
   position:absolute; top:0; left:0; display:inline-block; width:100%; height:100%; z-index:5;
 }
@@ -79,7 +87,7 @@ footer {
   height: 0%;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1001px) {
   .frames {
     visibility: visible;
     display: flex;
@@ -91,23 +99,13 @@ footer {
     border-radius: 5px;
   }
 
-  .slides {
-    gap: 50px;
-    padding: 100px;
+  .slides h2 {
+    font-size: 400%;
   }
-}
 
-.webframe {
-  position: relative;
-}
-
-.links {
-  color: yellow;
-}
-
-.page-container {
-  position: absolute;
-  min-height: 100vh;
+  .slides p {
+    font-size: 70%;
+  }
 }
 
 .button {
@@ -166,8 +164,8 @@ footer {
 
 .card {
   display: flex;
-  height: 70px;
-  width: 350px;
+  height: 8vh;
+  width: 65vw;
 }
 
 .card svg {
@@ -178,7 +176,6 @@ footer {
   font-size: 24px;
   font-weight: 700;
   opacity: 1;
-  transition: opacity 0.25s;
   z-index: 2;
   padding: 0.25rem;
   cursor: pointer;
